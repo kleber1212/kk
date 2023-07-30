@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <title>StreamTeam</title>
+</head>
+<body>
+    <div class="notification" id="notification">Compra realizada: Nome do Produto</div>
+    <script>
+        
+        function exibirNotificacao() {
+            const nomes = ["Maria", "Rodrigo", "Carlos", "Diana", "Eva", "Fernando", "Maicon", "Augusto", "Livia", "Jeferson", "Kleber", "Ana", "Bia", "Eduardo", "Fernanda", "Leandro", "Vânia", "Victor", "Gabriela", "Bianca", "Gregorio", "Rafaela", "Roberto", "Manuela", "Isabella", "Manoel", "Marcio", "Felipe", "Gustavo", "Renan", "Alexandre", "Rafael", ]
+            const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
+            const scream = ["Disney", "Netflix", "Paramount", "Spotify", "Gc-Midia", "Youtube Premium", "Minecraft", "Steam", "Roblox", "Nitro", "Crunchyroll"];
+            const screamAleatorio = scream[Math.floor(Math.random() * scream.length)];
+            const notificationElement = document.getElementById("notification");
+            notificationElement.innerText = "Compra de " + screamAleatorio + " realizada " + nomeAleatorio;
+
+        
+            notificationElement.style.opacity = 1;
+            notificationElement.style.animation = "fade-in 1s";
+
+            
+            setTimeout(function () {
+                notificationElement.style.animation = "none"; 
+                notificationElement.style.opacity = 0; 
+
+                setTimeout(function () {
+                    notificationElement.style.animation = "fade-in 0s";
+                }, 500);
+            }, 5000);
+        }
+        function atualizarNotificacao() {
+            exibirNotificacao();
+            setTimeout(atualizarNotificacao, 10000);
+        }
+        atualizarNotificacao();
+    </script>
+    <header>
+        <h1>StreamTeam</h1>
+        <nav>
+            <ul>
+                <li><a href="loja.html">Início</a></li>
+                <li><a href="loja2.html">Produtos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="filtragem">
+        <label for="filtro-produto"></label>
+        <input type="text" id="filtro-produto" placeholder="Buscar na Stream">
+    </section>
+    <main>
+        <section class="destaques">
+            <div class="produto">
+                <img src="dfsdfsdfsd.jpg" alt="DISNEY">
+                <h2>Disney</h2>
+                <p>CONTA PERMANENTE!</p>
+                <button class="comprar-button" onclick="comprarProduto1()">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="download.jpg" alt="SPOTIFY">
+                <h2>Spotify</h2>
+                <p>CONTA PERMANENTE!</p>
+                <button class="comprar-button" onclick="comprarProduto1()">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="paramount-studios-logo-divulgacao.jpg" alt="PARAMOUNT">
+                <h2>Paramount</h2>
+                <p>CONTA PERMANENTE!</p>
+                <button class="comprar-button" onclick="comprarProduto1()">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="mine.jfif" alt="Minecraft">
+                <h2>Minecraft</h2>
+                <p>Explore, construa e crie seu próprio mundo!</p>
+                <button class="comprar-button" onclick="comprarProduto1()">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="roblox.jfif" alt="Roblox">
+                <h2>Roblox</h2>
+                <p>Divirta-se crie experiências únicas!</p>
+                <button class="comprar-button" onclick="comprarProduto1()">Comprar</button>
+            </div>
+        </section>
+        <section class="destaques">
+            <div class="produto">
+                <img src="sdfsdfsdsdf.png" alt="NETFLIX">
+                <h2>Netflix</h2>
+                <p>CONTA PERMANENTE!</p>
+                <button class="comprar-button" onclick="comprarProduto1()">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="WhatsApp Image 2023-07-24 at 21.17.25.jpeg" alt="GC-MIDIAS">
+                <h2>Combo Gc-Midias</h2>
+                <p>Divulgação de fotos, instagram, criação de conteudo e videos!</p>
+                <button class="comprar-button" onclick="comprarProduto1()">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="sdasdasd.jfif" alt="Youtube">
+                <h2>Youtube Premium</h2>
+                <p>Sem anúncios, offline e muito mais!</p>
+                <button class="comprar-button" onclick="comprarProduto1()">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="steam.jfif" alt="Steam">
+                <h2>Steam</h2>
+                <p>Jogos incríveis para todas as plataformas!</p>
+                <button class="comprar-button" onclick="comprarProduto1()">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="nitro.jfif" alt="Nitro">
+                <h2>Nitro</h2>
+                <p>Explore todo o potencial do Discord!</p>
+                <button class="comprar-button" onclick="comprarProduto1()">Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="crunchcol.png" alt="Crunchyroll">
+                <h2>Crunchyroll</h2>
+                <p>Animes fresquinhos e legendados!</p>
+                <button class="comprar-button" onclick="comprarProduto1()">Comprar</button>
+            </div>
+        </section>
+        <script>
+            document.getElementById("filtro-produto").addEventListener("input", function() {
+                const textoFiltro = this.value.trim().toLowerCase();
+    
+                const produtos = document.querySelectorAll(".produto");
+                produtos.forEach(produto => {
+                    const nomeProduto = produto.querySelector("h2").textContent.toLowerCase();
+                    if (nomeProduto.includes(textoFiltro)) {
+                        produto.style.display = "block";
+                    } else {
+                        produto.style.display = "none";
+                    }
+                });
+            });
+        </script>
+    </main>
+    <a id="whatsapp-button" href="https://wa.me/71985430259?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos" target="_blank">
+        <img id="whatsapp-logo" src="zap2.png" alt="WhatsApp Logo">
+    </a>
+
+    <footer>
+        <p>Todos os direitos reservados &copy; 2023</p>
+    </footer>
+
+    <script>
+        function comprarProduto1() {
+            window.open('https://wa.me/71985430259?text=Eu%20estou%20interessado%20em%20seus%20produtos.%20Digite%20o%20produto%20aqui:%20', '_blank');
+        }
+    </script>
+</body>
+</html>

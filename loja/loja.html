@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <title>StreamTeam</title>
+</head>
+<body>
+    <a id="whatsapp-button" href="https://wa.me/71985430259?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos" target="_blank">
+        <img id="whatsapp-logo" src="zap2.png" alt="WhatsApp Logo">
+    </a>
+</head>
+<body>
+    <script>
+        window.addEventListener('scroll', function() {
+            var whatsappButton = document.getElementById('whatsapp-button');
+            if (window.scrollY > 100) {
+                whatsappButton.style.opacity = '0';
+            } else {
+                whatsappButton.style.opacity = '1';
+            }
+        });
+    </script>
+    <header>
+        <h1>StreamTeam</h1>
+        <nav>
+            <ul>
+                <li><a href="loja.html">Início</a></li>
+                <li><a href="loja2.html">Produtos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="destaques">
+        </section>
+
+        <section class="categorias">
+        </section>
+    </main>
+    <div class="centered-text">
+        <div>
+            <h1>Seja bem vindo a StreamTeam, um site de vendas onlines, seguro, confiável e com os melhores preços do mercado!</h1>
+        </div>
+    </div>
+    <footer>
+        <p>Todos os direitos reservados &copy; 2023</p>
+    </footer>
+</body>
+</html>
